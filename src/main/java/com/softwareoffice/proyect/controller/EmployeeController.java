@@ -1,9 +1,11 @@
 package com.softwareoffice.proyect.controller;
 
-import com.salesForce.entity.Employee;
-import com.salesForce.service.EmployeeService;
+import com.softwareoffice.proyect.entiry.Employee;
+import com.softwareoffice.proyect.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class EmployeeController {

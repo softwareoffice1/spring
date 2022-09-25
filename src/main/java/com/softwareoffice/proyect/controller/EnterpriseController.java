@@ -1,17 +1,22 @@
 package com.softwareoffice.proyect.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import com.softwareoffice.proyect.entiry.Enterprise;
+import com.softwareoffice.proyect.service.EnterpriseService;
+import org.springframework.web.servlet.view.RedirectView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class EnterpriseController {
 
     @Autowired
-    EmployeeService employeeService;
+    EnterpriseService enterpriseService;
 
-    // El sistema devuelve responses 200 en la ruta /enterprises con los siguientes verbos: |GET|POST|
-
-    // Consulta todas las empresas
+    //Lista todas las empresas
     @GetMapping("/enterprises")
     public List<Enterprise> findEnterprises (){
         List<Enterprise> enterprises = new ArrayList<Enterprise>();
@@ -20,14 +25,13 @@ public class EnterpriseController {
 
     // Crea una empresa
     @PostMapping("/enterprises")
-    public List<Enterprise> createEmpresa (@RequestBody Enterprise enterprise){
-        enterpriseService.createEnterprise (enterprise);
-        return enterpriseService.findEnterprises();
+    public RedirectView createEmpresa (@ModelAttribute Enterprise enterprise, Model model){
+        model.addAttribute(enterprise);
+        this.enterpriseService.createEnterprise(enterprise);
+        return new RedirectView("/empresas");
     }
 
-    // El sistema devuelve responses 200 en la ruta /enterprises/[id] con los siguientes verbos: |GET|PATCH|DELETE|
-
-    // Consulta una empresa en particular segun id_empresa
+    // Busca la empresa segun id_empresa
     @GetMapping("/enterprises/{id_enterprise}")
     public Enterprise findEnterprise (@PathVariable ("id_enterprise") Long id_enterprise){
         return enterpriseService.findEnterprise(id_enterprise);
@@ -46,10 +50,4 @@ public class EnterpriseController {
         return enterpriseService.findEnterprises();
     }
 
-    @GetMapping ("/enterprises_movements/{id_enterprise}")
-    public List<MovimientoDinero> findMovements (@PathVariable ("id_enterprise") Long id_enterprise) {
-        return enterpriseService.findMovements(id_enterprise);
-    }
-
-
-}
+  }
