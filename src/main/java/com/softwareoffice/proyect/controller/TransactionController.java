@@ -1,5 +1,7 @@
 package com.softwareoffice.proyect.controller;
 
+import com.softwareoffice.proyect.entiry.MovimientoDinero;
+import com.softwareoffice.proyect.service.MovimientoDineroService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

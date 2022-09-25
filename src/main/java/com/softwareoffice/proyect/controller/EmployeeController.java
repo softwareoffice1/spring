@@ -12,7 +12,7 @@ public class EmployeeController {
     @Autowired
     EmployeeService employeeService;
 
-    // El sistema devuelve responses 200 en la ruta /enterprises con los siguientes verbos:  |GET|POST|
+    // El sistema develve responses 200 en la rutau /enterprises con los siguientes verbos:  |GET|POST|
     //Se puede crear un empleado segun post
 
     @PostMapping("/user")

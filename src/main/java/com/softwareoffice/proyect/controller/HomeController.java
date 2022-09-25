@@ -1,6 +1,8 @@
 package com.softwareoffice.proyect.controller;
 
+import com.softwareoffice.proyect.service.MovimientoDineroService;
 import lombok.extern.slf4j.Slf4j;
+import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +18,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String verHome(Model model, @AuthenticationPrincipal OidcUser principal) {
-        var titulo = "home";
+        String titulo = "home";
         log.info("saludos desde Home");
         model.addAttribute("titulo", titulo);
         return "home";
