@@ -3,7 +3,6 @@ package com.softwareoffice.proyect.service;
 import com.softwareoffice.proyect.entiry.MovimientoDinero;
 import com.softwareoffice.proyect.repository.TransactionRepository;
 import org.springframework.stereotype.Service;
-
 import javax.persistence.EntityNotFoundException;
 import java.sql.Timestamp;
 import java.util.List;
@@ -16,12 +15,10 @@ public class MovimientoDineroService {
     public MovimientoDineroService(TransactionRepository repository){
         this.repository = repository;
     }
-
     public List<MovimientoDinero> getLstMovimientos() {
         List<MovimientoDinero> lista = this.repository.findAll();
         return this.repository.findAll();
     }
-
     public MovimientoDinero crearMovimiento(MovimientoDinero nuevoMovimiento) {
         try {
             Long datetime = System.currentTimeMillis();
@@ -70,7 +67,6 @@ public class MovimientoDineroService {
         movimiento.setMount(monto);
         return repository.save(movimiento);
     }
-
     // Consulta de los movimientos
     private static  MovimientoDinero movimientoDetail(MovimientoDinero movimiento) {
         return new MovimientoDinero(movimiento.getId_transaction(),  movimiento.getMount(), movimiento.getConcept(),
