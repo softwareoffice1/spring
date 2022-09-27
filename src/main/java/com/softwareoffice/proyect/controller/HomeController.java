@@ -2,14 +2,14 @@ package com.softwareoffice.proyect.controller;
 
 import com.softwareoffice.proyect.service.MovimientoDineroService;
 import lombok.extern.slf4j.Slf4j;
-import lombok.var;
+import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
 
 @Controller
 @Slf4j
