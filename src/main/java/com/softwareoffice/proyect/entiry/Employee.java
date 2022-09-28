@@ -5,9 +5,7 @@ import com.softwareoffice.proyect.enums.RolEmployee;
 import lombok.*;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -15,7 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 @Table (name = "employee")
-public class Employee implements Serializable {
+public class Employee{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_employee", nullable = false)

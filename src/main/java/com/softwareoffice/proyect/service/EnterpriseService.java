@@ -9,8 +9,7 @@ import java.util.*;
 public class EnterpriseService {
     @Autowired
     EnterpriseRepository enterpriseRepository;
-    @Autowired
-    TransactionRepository repository;
+
     // Metodo consulta una empresa en especifico
     public Enterprise findEnterprise(Long id_enterprise) {
         return this.enterpriseRepository.findById(id_enterprise).get();

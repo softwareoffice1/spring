@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5 ">
 <head th:replace="layout/layout::head(~{::title},~{::link})">
     <title th:text="${titulo}"></title>
 </head>
@@ -20,16 +22,17 @@
                 <!-- End Navbar -->
                 <div style="margin-top:100px;padding:25px">
                     <div class="card">
-                        <div class="card-header" >
-                            <img th:src="@{img/LogoSF.png}" width="180" height="180" class="d-inline-block align-text-center ">
+                        <div class="card-header">
+                            <img th:src="@{img/LogoSF.png}" width="180" height="180"
+                                 class="d-inline-block align-text-center ">
                             <div class="d-flex">
                             </div>
-                            <div class="card-body" >
+                            <div class="card-body">
                                 <div class="wrapper ">
                                     <div class="main-panel">
                                         <div style="margin-top:20px;padding:25px">
                                             <div class="card">
-                                                <div class="card-header" style="background-color: #2ba9cd" >
+                                                <div class="card-header" style="background-color: #2ba9cd">
                                                     <div class="d-flex">
                                                         <div class="p-2 flex-fill"><h4>Crear Empresa</h4></div>
                                                         <div class="p-2">
@@ -39,32 +42,39 @@
                                                 <div class="card-body" style="background-color: $gray-100">
                                                     <form>
                                                         <div class="row mb-3">
-                                                            <label for="nombre" class="col-sm-2 col-form-label">Nombre Empresa</label>
+                                                            <label for="nombre" class="col-sm-2 col-form-label">Nombre
+                                                                Empresa</label>
                                                             <div class="col-sm-10">
-                                                                <input th:field="*{name}" class="form-control" type="name"  id="nombre">
+                                                                <input th:field="*{name}" class="form-control"
+                                                                       type="name" id="nombre">
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
                                                             <label for="documento" class="col-sm-2 col-form-label">Documento(Nit)</label>
                                                             <div class="col-sm-10">
-                                                                <input th:field="*{id}" class="form-control" type="id"  id="documento">
+                                                                <input th:field="*{id}" class="form-control" type="id"
+                                                                       id="documento">
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
                                                             <label for="telefono" class="col-sm-2 col-form-label">Telefono</label>
                                                             <div class="col-sm-10">
-                                                                <input th:field="*{phone}" class="form-control" type="phone"  id="telefono">
+                                                                <input th:field="*{phone}" class="form-control"
+                                                                       type="phone" id="telefono">
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
                                                             <label for="direccion" class="col-sm-2 col-form-label">Direccion</label>
                                                             <div class="col-sm-10">
-                                                                <input th:field="*{adress}" class="form-control" type="address"  id="direccion">
+                                                                <input th:field="*{adress}" class="form-control"
+                                                                       type="address" id="direccion">
                                                             </div>
                                                         </div>
                                                         <li class="button">
-                                                            <button class="btn btn-primary" type="submit" >Guardar</button>
-                                                            <button class="btn btn-primary" type="submit" >Cancelar</button>
+                                                            <button class="btn btn-primary" type="submit">Guardar
+                                                            </button>
+                                                            <button class="btn btn-primary" type="submit">Cancelar
+                                                            </button>
                                                         </li>
                                                     </form>
                                                 </div>
@@ -76,7 +86,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer" >
+                            <div class="card-footer">
                                 <h5>fin de la card</h5>
                             </div>
                         </div>

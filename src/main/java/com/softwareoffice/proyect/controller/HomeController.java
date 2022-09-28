@@ -13,7 +13,8 @@ import org.springframework.security.oauth2.client.registration.ClientRegistratio
 
 @Controller
 @Slf4j
-@RequestMapping("/")
+@RestController
+@RequestMapping("/software")
 public class HomeController {
     @Autowired
     private MovimientoDineroService movimientoDineroService;

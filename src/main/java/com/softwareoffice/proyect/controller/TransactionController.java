@@ -57,7 +57,7 @@ public class TransactionController {
             return movimientoDineroService.updatedMovimientoById(id_transaction,conceptInput,monto);
         }
 
-        @RequestMapping(value = "/enterprises", method = RequestMethod.GET)
+        @RequestMapping("/enterprises")
         public List<Enterprise> OptionEnterprise(Model model) {
             var enterpriseOptions = enterpriseService.findEnterprises();
             return enterpriseOptions;

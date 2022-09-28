@@ -3,7 +3,6 @@ package com.softwareoffice.proyect.entiry;
 import lombok.*;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Date;
 
 @Entity
@@ -13,7 +12,7 @@ import java.util.Date;
 @Setter
 @ToString
 @Table (name = "Enterprise")
-public class Enterprise implements Serializable {
+public class Enterprise{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_enterprise", nullable = false)

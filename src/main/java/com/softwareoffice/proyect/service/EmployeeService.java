@@ -11,9 +11,11 @@ public class EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
     public Employee consultarEmpleado(Long id_employee) {
+
         return employeeRepository.findById(id_employee).get();
     }
     public void crearEmpleado (Employee employee) {
+
         employeeRepository.save(employee);
     }
     public Employee editarNombreEmpleado (Long id, String nombreEmpleado) {
@@ -25,6 +27,7 @@ public class EmployeeService {
         return new ArrayList<Employee>(employeeRepository.findAll());
     }
     public void borrarEmpleado (Long id_empleado) {
+
         employeeRepository.deleteById(id_empleado);
     }
 }
