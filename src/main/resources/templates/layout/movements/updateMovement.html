@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="layout/layout::head(~{::title},~{::link})">
+    <title th:text="${titulo}"></title>
+</head>
+<body class="">
+<div class="wrapper ">
+
+    <div th:replace="layout/layout::sidebar"></div>
+    <div class="main-panel">
+        <!-- Navbar -->
+        <nav th:replace="layout/layout::navBar"></nav>
+        <!-- End Navbar -->
+        <div style="margin-top:100px;padding:25px">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex">
+                        <div class="pb-1 flex-fill text-primary"><h5>Actualizar Movimiento</h5></div>
+                    </div>
+                </div>
+                <div class="card-body" >
+                    <!-- ZONA DE TRABAJO DE DATOS -->
+                    <div class="col-md-4 border-light" style="margin: 0 auto; border: solid 1px #3b5998; background-color: #f4f4f4">
+                        <form th:action="@{/movimientos/transaction}" th:object="${movimientoDinero}" method="post">
+                            <input th:field="${movimientoDinero.id_transaction}" type="hidden">
+                            <div class="form-group">
+                                <label>Empresa</label>
+                                <select class="custom-select" th:field="*{enterprise}" >
+                                    <option th:each="item: ${enterprises}"
+                                            th:text="${item.name}"
+                                            th:value="${item.id_enterprise}"></option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Empleado</label>
+                                <select class="custom-select" th:field="*{employee}">
+                                    <option th:each="employee: ${employees}"
+                                            th:text="${employee.nombreEmpleado}"
+                                            th:value="${employee.id_employee}"></option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Concepto</label>
+                                <textarea class="form-control textarea" th:field="${movimientoDinero.concept}"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Monto</label>
+                                <input class="form-control" placeholder="ZIP Code" th:field="${movimientoDinero.mount}" type="number">
+                            </div>
+
+                            <div class="row">
+                                <div class="justify-content-md-center" style="margin: 0 auto">
+                                    <a th:href="@{/movimientos}" href="#" class="btn btn-secondary btn-round">Cancelar</a>
+                                    <button class="btn btn-primary btn-round" type="submit" >Guardar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card-footer" >
+                  <hr>
+                </div>
+            </div>
+        </div>
+        <footer th:include="layout/layout::footer"></footer>
+    </div>
+</div>
+</body>
+</html>
