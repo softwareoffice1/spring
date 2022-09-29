@@ -37,7 +37,7 @@ public class EnterpriseController {
         return enterpriseService.findEnterprise(id_enterprise);
     }
 
-    // Actualiza nit Empresa
+    // Actualiza el nit de la Empresa
     @PatchMapping("/enterprises/{id_enterprise}/{document}")
     public Enterprise editDocument (@PathVariable ("id_enterprise") Long id, @PathVariable ("document") String document){
         enterpriseService.editDocument(id, document);
